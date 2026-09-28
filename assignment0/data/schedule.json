@@ -1,0 +1,42 @@
+{
+        "name": "Amarie Drollinger",
+        "days": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+        ],
+
+        "schedule": {
+                "8:00": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                ],
+                "10:00": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                ],
+                "12:00": [
+                        "Web Dev",
+                        "",
+                        "Web Dev",
+                        "",
+                        ""
+                ],
+                "2:00": [
+                        "",
+                        "Capstone",
+                        "",
+                        "",
+                        ""
+                ]
+         }
+        
+}       

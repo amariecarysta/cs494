@@ -1,7 +1,40 @@
+import styles from "./styles.module.css"
+
+import data from "../data/schedule.json"
+
 export default function Home() {
+
+// javascript stuff up here
+console.log(data.name);
+
+
   return (
     <main>
-      <div>Hello world!</div>
+      <div className={styles.header}>{data.name}'s Schedule</div>
+      <table className={styles.table}>
+        <thead>
+          <tr>
+            <td>Time</td>
+            {data.days.map((day, i)=>(
+              <th key={i}>{day}</th>
+
+            ))}
+
+          </tr>
+        </thead>
+        <tbody>
+
+          {Object.entries(data.schedule).map((entry,i)=>(
+            <tr key={i}>
+              <td>{entry[0]}</td>
+                  {entry[1].map((activity,j)=>(
+                    <td key={j}>{activity}</td>
+                  ))}
+                  </tr>
+         )) }
+
+        </tbody>
+      </table>
     </main>
   );
 }
