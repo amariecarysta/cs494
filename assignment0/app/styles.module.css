@@ -3,7 +3,7 @@
     color: rgb(9, 166, 166);
 }
 
-.table {
+.scheduleTable {
     width: 700px;
     border-collapse: collapse;
     background-color: white;
@@ -12,23 +12,23 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.table th {
+.scheduleTable th {
     background-color: rgb(9, 166, 166);
     color: white;
     padding: 12px;
     text-align: center;
 }
 
-.table td {
+.scheduleTable td {
     padding: 12px;
     text-align: center;
     border-bottom: 1px solid #ddd;
 }
 
-.table tr:nth-child(even) {
+.scheduleTable tr:nth-child(even) {
     background-color: #f2fafa;
 }
 
-.table tr:hover {
+.scheduleTable tr:hover {
     background-color: #d9f3f3;
 }

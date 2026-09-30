@@ -1,40 +1,20 @@
 import styles from "./styles.module.css"
 
-import data from "../data/schedule.json"
+import data from "@/data/schedule.json"
+
+import {getHeader} from "@/utils/helpers"
+
+import ScheduleTable from "@/components/scheduleTable"
+
 
 export default function Home() {
-
-// javascript stuff up here
-console.log(data.name);
 
 
   return (
     <main>
-      <div className={styles.header}>{data.name}'s Schedule</div>
-      <table className={styles.table}>
-        <thead>
-          <tr>
-            <td>Time</td>
-            {data.days.map((day, i)=>(
-              <th key={i}>{day}</th>
+      {getHeader(styles.header, data.name)}
+      <ScheduleTable style={styles.scheduleTable} days={data.days} schedule={data.schedule}/>
 
-            ))}
-
-          </tr>
-        </thead>
-        <tbody>
-
-          {Object.entries(data.schedule).map((entry,i)=>(
-            <tr key={i}>
-              <td>{entry[0]}</td>
-                  {entry[1].map((activity,j)=>(
-                    <td key={j}>{activity}</td>
-                  ))}
-                  </tr>
-         )) }
-
-        </tbody>
-      </table>
     </main>
-  );
+  )
 }
