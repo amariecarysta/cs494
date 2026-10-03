@@ -1,6 +1,9 @@
+import HeaderTable from "../components/headerTable"
+
 export default function Home() {
     return (
     <div>
+        <HeaderTable />
         <h3>My favorite video games</h3>
         <ul>
           <li> Zelda: Breath of the Wild</li>

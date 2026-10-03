@@ -1,4 +1,5 @@
 import style from "./page.module.css";
+import HeaderTable from "../components/headerTable";
 
 export default function Home() {
 
@@ -31,6 +32,7 @@ export default function Home() {
 
   return (
     <div>
+      <HeaderTable />
         <h3>My Schedule</h3>
         <table className= {style.scheduleTable}>
           <thead>
