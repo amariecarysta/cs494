@@ -1,0 +1,44 @@
+.contactPage {
+    min-height: 100vh;
+    padding: 30px 8%;
+  }
+  
+  .contactTitle {
+    text-align: center;
+    color: #754f59;
+    font-size: 2.5rem;
+    margin-top: 60px;
+    margin-bottom: 10px;
+  }
+  
+  .logoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    width: 140px;
+    height: 140px;
+  
+    background-color: #fffafa;
+    border-radius: 20px;
+  
+    box-shadow: 0 5px 15px rgba(110, 70, 80, 0.12);
+  
+    transition: 0.2s;
+  }
+  
+  .logo:hover {
+    background-color: #f5dce3;
+    transform: translateY(-5px);
+  }
+  
+  .logo img {
+    object-fit: contain;
+  }

@@ -1,0 +1,26 @@
+.table {
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 12px;
+  }
+  
+  .table a {
+    display: block;
+    padding: 10px 22px;
+  
+    color: #754f59;
+    background-color: #fffafa;
+  
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+  
+    border-radius: 20px;
+  
+    transition: 0.2s;
+  }
+  
+  .table a:hover {
+    background-color: #f5dce3;
+    color: #9b6473;
+  }

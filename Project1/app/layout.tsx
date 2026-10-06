@@ -1,0 +1,19 @@
+import type { Metadata } from "next";
+
+import "./globals.css";
+
+
+export const metadata: Metadata = {
+  title: "Project 1",
+  description: "My first next.js project",
+};
+
+export default function RootLayout({ children }: LayoutProps<"/">) {
+  return (
+    <html
+      lang="en"
+    >
+      <body className="min-h-full flex flex-col">{children}</body>
+    </html>
+  );
+}

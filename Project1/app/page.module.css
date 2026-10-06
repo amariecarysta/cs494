@@ -1,0 +1,78 @@
+.myDiv {
+    min-height: 100vh;
+    padding: 30px 8%;
+  }
+  
+  .myHeader {
+    text-align: center;
+    color: #754f59;
+    font-size: 3rem;
+    margin-top: 70px;
+    margin-bottom: 45px;
+    font-weight: 600;
+  }
+  
+  .profileSection {
+    max-width: 950px;
+    margin: 0 auto;
+  
+    display: flex;
+    align-items: center;
+    gap: 50px;
+  
+    background-color: #fffafa;
+    padding: 45px;
+  
+    border-radius: 25px;
+  
+    box-shadow: 0 8px 25px rgba(110, 70, 80, 0.12);
+  }
+  
+  .profileImage {
+    width: 280px;
+    height: 280px;
+  
+    object-fit: cover;
+  
+    border-radius: 20px;
+  
+    border: 5px solid #f5dce3;
+  }
+  
+  .about {
+    flex: 1;
+  }
+  
+  .about h2 {
+    color: #a36878;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .about p {
+    color: #5f5558;
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 18px;
+  }
+  
+  /* Mobile */
+  
+  @media (max-width: 750px) {
+  
+    .myHeader {
+      font-size: 2.2rem;
+      margin-top: 45px;
+    }
+  
+    .profileSection {
+      flex-direction: column;
+      text-align: center;
+      padding: 30px;
+    }
+  
+    .profileImage {
+      width: 220px;
+      height: 220px;
+    }
+  }

@@ -1,0 +1,49 @@
+.projectsPage {
+    min-height: 100vh;
+    padding: 30px 8%;
+  }
+  
+  .projectTitle {
+    text-align: center;
+    color: #754f59;
+    font-size: 2.5rem;
+    margin-top: 60px;
+    margin-bottom: 40px;
+  }
+  
+  .projectTable {
+    width: 80%;
+    max-width: 900px;
+    margin: 0 auto;
+  
+    border-collapse: separate;
+    border-spacing: 0;
+  
+    background-color: #fffafa;
+    border-radius: 20px;
+    overflow: hidden;
+  
+    box-shadow: 0 5px 15px rgba(110, 70, 80, 0.12);
+  }
+  
+  .projectTable th {
+    background-color: #f5dce3;
+    color: #754f59;
+  
+    font-size: 1.1rem;
+    text-align: left;
+  
+    padding: 20px;
+  }
+  
+  .projectTable td {
+    color: #5f5558;
+    padding: 25px 20px;
+    line-height: 1.6;
+  
+    border-bottom: 1px solid #f5dce3;
+  }
+  
+  .projectTable tr:last-child td {
+    border-bottom: none;
+  }
