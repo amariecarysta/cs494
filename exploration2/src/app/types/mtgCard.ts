@@ -12,7 +12,7 @@ export type MtgCard = {
 export function mapMtgCard(data: any): MtgCard{
     return{
         name: data.name,
-        image: data.image_uris.large,
+        image: data.image_uris.large ?? "",
         manaCost: data.mana_cost,
         CMC: data.cnc,
         oracleText: data.oracle_text,
