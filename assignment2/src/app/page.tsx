@@ -1,60 +1,26 @@
-import { Card, Typography, TableContainer, Table, TableHead, TableBody, TableRow, TableCell } from "@mui/material";
+import { Typography, TableContainer, Table } from "@mui/material"
 
-type Planet = {
-  name: string
-  mass: number
-  distance_light_year: number
-}
+import { Dog } from "../../types/dog"
+import DataTableBody from "../../components/dataTableBody"
+import DataTableHead from "../../components/dataTableHead"
 
 export default async function Home() {
 
-  const url = "https://api.api-ninjas.com/v1/planets?max_distance_light_year=.1"
-
-  const response = await fetch(url, {headers: {'X-Api-Key': process.env.API_NINJA_KEY ?? ""}})
-
-  const data: Planet[] = await response.json()
-
-
-
+  const url = "https://api.api-ninjas.com/v1/dogs?max_height=12"
+  const response = await fetch(url, {headers: {'X-Api-Key' : process.env.API_NINJA_KEY ?? "" }})
+  const data: Dog[] = await response.json()
 
   return (
     <main>
-
-      <Card>
-        <Typography
-          sx={{ m: 2, p: 3, color: "purple" }}
-          variant="h3"
-          component="h2"
-        >
-          Hello World(s?!)!
-      
-        </Typography>
-      </Card>
-
+      <Typography sx={{ m: 2, p: 3}} variant="h4">
+        Here's a cool table about dogs that are 12 inches tall or smaller!
+      </Typography>
       <TableContainer>
         <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>Name</TableCell>
-              <TableCell>Mass</TableCell>
-              <TableCell>Distance From Earth</TableCell>
-        </TableRow>
-      </TableHead>
-      <TableBody>
-        {
-          data.map((planet: Planet, i: number)=>(
-            <TableRow key={i}> 
-              <TableCell>{planet.name}</TableCell>
-              <TableCell>{planet.mass}</TableCell>
-              <TableCell>{planet.distance_light_year}</TableCell>
-
-            </TableRow>
-          ))
-        }
-      </TableBody>
-    </Table> 
-  </TableContainer >
-
-    </main >
+          <DataTableHead />
+          <DataTableBody data={data}/>
+        </Table>
+      </TableContainer>
+    </main>
   );
 }
