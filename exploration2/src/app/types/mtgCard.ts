@@ -14,7 +14,7 @@ export function mapMtgCard(data: any): MtgCard{
         name: data.name,
         image: data.image_uris.large ?? "",
         manaCost: data.mana_cost,
-        CMC: data.cnc,
+        CMC: data.cmc,
         oracleText: data.oracle_text,
         flavorText: data.flavor_text
     }
