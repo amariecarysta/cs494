@@ -1,5 +1,4 @@
 import { TableHead, TableRow, TableCell } from "@mui/material";
-
 import { StyledTableHeadRow } from "./styledComponents";
 
 export default function DataTableHead() {

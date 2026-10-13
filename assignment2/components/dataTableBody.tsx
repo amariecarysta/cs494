@@ -1,5 +1,3 @@
-'use client'
-
 import { TableBody, TableCell, TableRow } from "@mui/material";
 import { Dog } from "../types/dog";
 import { StyledTableRow } from "./styledComponents";

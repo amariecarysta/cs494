@@ -1,8 +1,6 @@
 import { Typography, TableContainer, Table } from "@mui/material"
-
 import { Dog } from "../../types/dog"
-import DataTableBody from "../../components/dataTableBody"
-import DataTableHead from "../../components/dataTableHead"
+import DataTable from "../../components/dataTable"
 
 export default async function Home() {
 
@@ -15,12 +13,8 @@ export default async function Home() {
       <Typography sx={{ m: 2, p: 3}} variant="h4">
         Here's a cool table about dogs that are 12 inches tall or smaller!
       </Typography>
-      <TableContainer>
-        <Table>
-          <DataTableHead />
-          <DataTableBody data={data}/>
-        </Table>
-      </TableContainer>
+      <DataTable data={data} />
+
     </main>
-  );
+  )
 }
