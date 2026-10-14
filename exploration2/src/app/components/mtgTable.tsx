@@ -31,7 +31,9 @@ export default function MtgTable(props: {cards: MtgCard[]}){
                         <StyledTableCell>{card.name}</StyledTableCell>
                         <StyledTableCell><Image alt={card.name} width={50} height={70} src={card.image} unoptimized />
                         </StyledTableCell>
-                        <StyledTableCell>{card.manaCost.join(",")}</StyledTableCell>
+                        <StyledTableCell>{card.manaCost.map((cost, i) => 
+                            getElementFromCost(cost, i)
+                        )}</StyledTableCell>
                         <StyledTableCell>{card.CMC}</StyledTableCell>
                         <StyledTableCell>{card.oracleText}</StyledTableCell>
                         <StyledTableCell>{card.flavorText}</StyledTableCell>
@@ -43,4 +45,14 @@ export default function MtgTable(props: {cards: MtgCard[]}){
             </Table>
         </TableContainer>
     )
+}
+
+function getElementFromCost(cost: string, i: number){
+    if (["{W}", "{B}", "{U}", "{R}", "{G}"].includes(cost)){
+        return <Image key={i} style={{verticalAlign: "middle"}} alt={cost} width={20} height={20} src={`/images/${cost.slice(1, -1)}.svg`} />
+    }
+
+    else{
+        return <span key={i}>{cost}</span>
+    }
 }
