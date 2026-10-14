@@ -1,3 +1,5 @@
+"use client"
+
 import { TableContainer, Table, TableHead, TableBody } from "@mui/material"
 
 import StyledTableRow from "../components/styledTableRow"
@@ -16,10 +18,19 @@ export default function MtgTable(props: { cards: MtgCard[]}) {
 
     const [sortedCards, setSortedCards] = useState<MtgCard[]>(props.cards)
 
-    function sort(col: "CMC"){
+    const [ascending, setAscending] = useState<boolean>(true)
+
+
+    function sort(col: "CMC" | "name" | "oracleText" | "flavorText"){
         if (col == "CMC"){
-            setSortedCards([...sortedCards].sort((a: MtgCard, b: MtgCard)=> a[col] - b[col]))
+            // number sort
+            setSortedCards([...sortedCards].sort((a: MtgCard, b: MtgCard) => ascending ? a[col] - b[col] : b[col] - a[col]))
         }
+        else {
+            // string sort
+            setSortedCards([...sortedCards].sort((a: MtgCard, b: MtgCard) => ascending ? (a[col] ?? "").localeCompare(b[col] ?? "") : (b[col] ?? "").localeCompare(a[col] ?? "")))
+        }
+        setAscending(!ascending)
     }
 
     return (
@@ -27,13 +38,13 @@ export default function MtgTable(props: { cards: MtgCard[]}) {
             <Table>
                 <TableHead>
                     <StyledTableRow>
-                        <StyledTableCell>Name</StyledTableCell>
+                        <StyledTableCell>Name<UnfoldMoreIcon sx={{ verticalAlign: "middle", cursor: "pointer" }} onClick={()=>{sort("name")}} /></StyledTableCell>
                         <StyledTableCell>Image</StyledTableCell>
                         <StyledTableCell>ManaCost</StyledTableCell>
-                        <StyledTableCell width={60}>CMC <UnfoldMoreIcon sx={{ verticalAlign: "middle" }} onClick={()=>{sort("CMC")}} />
+                        <StyledTableCell width={60}>CMC <UnfoldMoreIcon sx={{ verticalAlign: "middle", cursor: "pointer" }} onClick={()=>{sort("CMC")}} />
                         </StyledTableCell>
-                        <StyledTableCell>Oracle Text</StyledTableCell>
-                        <StyledTableCell>Flavor Text</StyledTableCell>
+                        <StyledTableCell>Oracle Text <UnfoldMoreIcon sx={{ verticalAlign: "middle", cursor: "pointer" }} onClick={()=>{sort("oracleText")}} /> </StyledTableCell>
+                        <StyledTableCell>Flavor Text <UnfoldMoreIcon sx={{ verticalAlign: "middle", cursor: "pointer" }} onClick={()=>{sort("flavorText")}} /></StyledTableCell>
 
 
                     </StyledTableRow>
