@@ -31,7 +31,7 @@ export default function MtgTable(props: {cards: MtgCard[]}){
                         <StyledTableCell>{card.name}</StyledTableCell>
                         <StyledTableCell><Image alt={card.name} width={50} height={70} src={card.image} unoptimized />
                         </StyledTableCell>
-                        <StyledTableCell>{card.manaCost}</StyledTableCell>
+                        <StyledTableCell>{card.manaCost.join(",")}</StyledTableCell>
                         <StyledTableCell>{card.CMC}</StyledTableCell>
                         <StyledTableCell>{card.oracleText}</StyledTableCell>
                         <StyledTableCell>{card.flavorText}</StyledTableCell>
