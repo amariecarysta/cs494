@@ -1,16 +1,19 @@
 import { TableBody, TableCell, TableRow } from "@mui/material";
-import { Dog } from "../types/dog";
+import { Planet } from "../types/planet";
 import { StyledTableRow } from "./styledComponents";
 
-export default function DataTableBody( props: { data: Dog[] }) {
+export default function DataTableBody( props: { data: Planet[] }) {
     return (
         <TableBody>
             {
-                props.data.map((dog: Dog, i: number) => (
+                props.data.map((planet: Planet, i: number) => (
                     <StyledTableRow key={i}>
-                        <TableCell>{dog.name}</TableCell>
-                        <TableCell>{dog.max_life_expectancy}</TableCell>
-                        <TableCell>{dog.shedding}</TableCell>
+                        <TableCell>{planet.name}</TableCell>
+                        <TableCell>{planet.mass}</TableCell>
+                        <TableCell>{planet.radius}</TableCell>
+                        <TableCell>{planet.distance_light_year}</TableCell>
+                        <TableCell>{planet.period}</TableCell>
+                        <TableCell>{planet.temperature}</TableCell>
                     </StyledTableRow>
                 ))
             }
