@@ -9,12 +9,12 @@ export default function Home() {
   const [response, setResponse] = useState<string | undefined>(undefined)
 
   useEffect(()=>{
-    fetch("/api/word?word=holaMundo")
-      .then((res)=>{return res.json()})
-      .then((data)=>{setResponse(data.message)})
-  }, [])
-
-  useEffect(()=>{console.log(savedWord)}, [savedWord])
+    if (savedWord !== ""){
+      fetch(`/api/word?word=${encodeURIComponent(savedWord)}`)
+        .then((res)=>{return res.json()})
+        .then((data)=>{setResponse(data.message)})
+    }
+  }, [savedWord])
 
   return (
 
@@ -29,5 +29,5 @@ export default function Home() {
           />
           
       </Box>
-  );
+  )
 }
